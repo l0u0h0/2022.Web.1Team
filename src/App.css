@@ -1,3 +1,9 @@
+/* NEWS API CSS */
+
+div .App {
+  margin: 200px auto;
+}
+
 div .list {
   display: flex;
 }

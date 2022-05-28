@@ -4,7 +4,7 @@ import React from "react";
 
 function App() {
   return (
-    <div style={{ width: "70%", height: "400px" }}>
+    <div className="App" style={{ width: "70%", height: "400px" }}>
       <NewsApi />
     </div>
   );
