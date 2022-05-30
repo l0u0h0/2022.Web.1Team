@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import NewsItem from "../js/NewsItem";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
 
 export default function NewsApi() {
   // NewsApi에서 받아온 값을 저장할 State, 초기값 null
@@ -17,7 +21,7 @@ export default function NewsApi() {
       try {
         // axios.get으로 api 호출
         const response = await axios.get(
-          "https://newsapi.org/v2/everything?pageSize=3&page=1&q=전기차&top-headlines?country=kr&apiKey=6b3e1df4f86f4c4ebae8f5389c7d8ba6"
+          "https://newsapi.org/v2/everything?pageSize=4&page=1&q=전기차&top-headlines?country=kr&apiKey=6b3e1df4f86f4c4ebae8f5389c7d8ba6"
         );
         // 받아온 데이터 articles state에 저장
         setArticles(response.data.articles);
@@ -41,10 +45,26 @@ export default function NewsApi() {
   }
   // map 이용해 NewsItem Component를 하나씩 실행
   return (
-    <div className="container_news">
-      {articles.map((article) => (
-        <NewsItem key={article.url} article={article} />
-      ))}
+    <div className="container-news">
+      <Swiper
+        modules={[Pagination]}
+        slidesPerView={3}
+        spaceBetween={10}
+        centeredSlides
+        loop
+        autoplay={{ delay: 5000 }}
+        pagination={{
+          clickable: true,
+          el: ".container-news .swiper-pagination",
+        }}
+      >
+        {articles.map((article) => (
+          <SwiperSlide>
+            <NewsItem key={article.url} article={article} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <div className="swiper-pagination"></div>
     </div>
   );
 }

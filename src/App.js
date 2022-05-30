@@ -1,4 +1,5 @@
-import "./App.css";
+import "./css/App.css";
+import "./css/News.css";
 import NewsApi from "./components/NewsApiComponent";
 import React from "react";
 

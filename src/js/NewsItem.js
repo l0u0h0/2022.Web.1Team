@@ -3,7 +3,7 @@ import React from "react";
 const NewsItem = ({ article }) => {
   const { title, description, url, urlToImage } = article;
   return (
-    <div className="list">
+    <>
       {urlToImage && (
         <div className="thumnail">
           <a href={url} target="_blank" rel="noopener noreferrer">
@@ -19,7 +19,7 @@ const NewsItem = ({ article }) => {
         </h2>
         <p>{description}</p>
       </div>
-    </div>
+    </>
   );
 };
 export default NewsItem;
