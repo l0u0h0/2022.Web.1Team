@@ -65,6 +65,24 @@ export default function NewsApi() {
         ))}
       </Swiper>
       <div className="swiper-pagination"></div>
+      <div className="under-news">
+        {articles[0].urlToImage && (
+          <div className="thumnail">
+            <a href={articles[0].url} target="_blank" rel="noopener noreferrer">
+              <img src={articles[0].urlToImage} alt="thumnail" />
+            </a>
+          </div>
+        )}
+        <div className="contents">
+          <h2>
+            <a href={articles[0].url} target="_blank" rel="noopener noreferrer">
+              {articles[0].title}
+            </a>
+          </h2>
+          <p>{articles[0].description}</p>
+          <p className="Newstime">{articles[0].publishedAt}</p>
+        </div>
+      </div>
     </div>
   );
 }

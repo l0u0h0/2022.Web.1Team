@@ -1,4 +1,4 @@
-div .container-news {
+.container-news {
   text-align: left;
   box-sizing: border-box;
   margin: 0 auto;
@@ -79,4 +79,6 @@ div .container-news {
 }
 .container-news .swiper-pagination .swiper-pagination-bullet-active {
   background-image: url("../images/News_slide_pager_on.png");
+}
+.under-news .contents {
 }
