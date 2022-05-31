@@ -59,6 +59,9 @@
   width: 200px;
   height: 150px;
 }
+.container-news .contents {
+  display: block;
+}
 .container-news .contents h2 {
   margin: 0;
 }
