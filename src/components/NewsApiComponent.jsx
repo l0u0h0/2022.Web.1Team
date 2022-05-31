@@ -21,7 +21,7 @@ export default function NewsApi() {
       try {
         // axios.get으로 api 호출
         const response = await axios.get(
-          "https://newsapi.org/v2/everything?pageSize=4&page=1&q=전기차&top-headlines?country=kr&apiKey=6b3e1df4f86f4c4ebae8f5389c7d8ba6"
+          "https://newsapi.org/v2/everything?pageSize=6&page=1&q=전기차&top-headlines?country=kr&apiKey=6b3e1df4f86f4c4ebae8f5389c7d8ba6"
         );
         // 받아온 데이터 articles state에 저장
         setArticles(response.data.articles);
