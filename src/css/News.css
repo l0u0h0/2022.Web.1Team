@@ -31,6 +31,10 @@ div .container-news {
   margin-top: 0%.5rem;
   white-space: normal;
 }
+.contents .Newstime {
+  font-size: 10pt;
+  text-align: right;
+}
 .container-news {
   width: 800px;
   height: 450px;

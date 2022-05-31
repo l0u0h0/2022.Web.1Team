@@ -1,7 +1,7 @@
 import React from "react";
 
 const NewsItem = ({ article }) => {
-  const { title, description, url, urlToImage } = article;
+  const { title, publishedAt, description, url, urlToImage } = article;
   return (
     <>
       {urlToImage && (
@@ -18,6 +18,7 @@ const NewsItem = ({ article }) => {
           </a>
         </h2>
         <p>{description}</p>
+        <p className="Newstime">{publishedAt}</p>
       </div>
     </>
   );
