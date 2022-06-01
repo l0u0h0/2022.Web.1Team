@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import NewsItem from "../js/NewsItem";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Pagination, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -43,11 +43,13 @@ export default function NewsApi() {
   if (!articles) {
     return null;
   }
+  // Swiper 라이브러리를 이용해 Swiper 컴포넌트로 Pagination 모듈 생성
   // map 이용해 NewsItem Component를 하나씩 실행
+  // url을 이용해 각 뉴스마다 고유한 키 값 생성
   return (
     <div className="container-news">
       <Swiper
-        modules={[Pagination]}
+        modules={[Pagination, Autoplay]}
         slidesPerView={3}
         spaceBetween={10}
         centeredSlides
