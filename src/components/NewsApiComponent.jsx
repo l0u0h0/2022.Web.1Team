@@ -8,39 +8,39 @@ import "swiper/css/pagination";
 
 export default function NewsApi() {
   // NewsApi에서 받아온 값을 저장할 State, 초기값 null
-  const [articles, setArticles] = useState(null);
+  const [newslist, setNewslist] = useState(null);
   // Api를 불러오는 상태에 대한 State, 초기값 false
-  const [loading, setLoading] = useState(false);
+  const [load, setLoad] = useState(false);
 
   // Render 되는 시점에서 Api를 호출
   useEffect(() => {
     // async, await로 비동기 호출
-    const fetchData = async () => {
+    const callApi = async () => {
       // loading state true
-      setLoading(true);
+      setLoad(true);
       try {
         // axios.get으로 api 호출
-        const response = await axios.get(
+        const news = await axios.get(
           "https://newsapi.org/v2/everything?pageSize=6&page=1&q=전기차&top-headlines?country=kr&apiKey=6b3e1df4f86f4c4ebae8f5389c7d8ba6"
         );
         // 받아온 데이터 articles state에 저장
-        setArticles(response.data.articles);
+        setNewslist(news.data.articles);
         // 에러 발생 시 콘솔에 출력
       } catch (error) {
         console.log(error);
       }
       // 불러오기가 끝나면 loading state false
-      setLoading(false);
+      setLoad(false);
     };
     // 함수 실행
-    fetchData();
+    callApi();
   }, []);
   // state 로딩 값이 true면 출력
-  if (loading) {
+  if (load) {
     return <div>로딩중.....</div>;
   }
   // articles에 null 값 있는지 검사
-  if (!articles) {
+  if (!newslist) {
     return null;
   }
   // Swiper 라이브러리를 이용해 Swiper 컴포넌트로 Pagination 모듈 생성
@@ -60,29 +60,29 @@ export default function NewsApi() {
           el: ".container-news .swiper-pagination",
         }}
       >
-        {articles.map((article) => (
+        {newslist.map((news) => (
           <SwiperSlide>
-            <NewsItem key={article.url} article={article} />
+            <NewsItem key={news.url} news={news} />
           </SwiperSlide>
         ))}
       </Swiper>
       <div className="swiper-pagination"></div>
       <div className="under-news">
-        {articles[0].urlToImage && (
+        {newslist[0].urlToImage && (
           <div className="thumnail">
-            <a href={articles[0].url} target="_blank" rel="noopener noreferrer">
-              <img src={articles[0].urlToImage} alt="thumnail" />
+            <a href={newslist[0].url} target="_blank" rel="noopener noreferrer">
+              <img src={newslist[0].urlToImage} alt="thumnail" />
             </a>
           </div>
         )}
         <div className="contents">
           <h2>
-            <a href={articles[0].url} target="_blank" rel="noopener noreferrer">
-              {articles[0].title}
+            <a href={newslist[0].url} target="_blank" rel="noopener noreferrer">
+              {newslist[0].title}
             </a>
           </h2>
-          <p>{articles[0].description}</p>
-          <p className="Newstime">{articles[0].publishedAt}</p>
+          <p>{newslist[0].description}</p>
+          <p className="Newstime">{newslist[0].publishedAt}</p>
         </div>
       </div>
     </div>
