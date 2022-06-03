@@ -1,5 +1,6 @@
 import "./css/App.css";
 import "./css/News.css";
+import "./css/Map.css";
 import NewsApi from "./components/NewsApiComponent";
 import Map from "./components/MapComponent";
 import React from "react";
@@ -24,7 +25,7 @@ class App extends React.Component {
         <body>
           <header id="header">
             <div className="logo">
-              <a>
+              <a href="javascript:void(0)">
                 <img src={logo} alt="logo " />
               </a>
             </div>
@@ -32,13 +33,15 @@ class App extends React.Component {
           <nav id="nav">
             <ul>
               <li>
-                <a className="on">전기차 충전소 위치</a>
+                <a href="javascript:void(0)" className="on">
+                  전기차 충전소 위치
+                </a>
               </li>
               <li>
-                <a>충전 내역</a>
+                <a href="javascript:void(0)">충전 내역</a>
               </li>
               <li>
-                <a>전기차 이슈</a>
+                <a href="javascript:void(0)">전기차 이슈</a>
               </li>
             </ul>
           </nav>
@@ -57,7 +60,7 @@ class App extends React.Component {
             <div class="container">
               <address>
                 Copyright ©
-                <a href="#">
+                <a href="javascript:void(0)">
                   <strong>Web team</strong>
                 </a>
                 All Rights Reserved.
@@ -68,11 +71,6 @@ class App extends React.Component {
       </div>
     );
   }
-  // return (
-  //   <div className="App" style={{ width: "70%", height: "400px" }}>
-  //     <NewsApi />
-  //   </div>
-  // );
 }
 
 export default App;

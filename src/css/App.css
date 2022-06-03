@@ -1,86 +1,14 @@
-/* div .App {
+/* Common CSS */
+
+div .App {
   margin: 200px auto;
-} */
-
-* {
-  margin: 0;
-  padding: 0;
 }
-
-#map {
-  position: relative;
-}
-
-#marker_info {
-  position: absolute;
-  top: 231px;
-  width: 300px;
-  height: 130px;
-  border: 1px solid #fff;
-  background: #fff;
-  border-radius: 10px;
-  z-index: 1000;
-  padding: 0 10px;
-  margin: 3px 0 0 4px;
-}
-
-#marker_info h2 {
-  font-size: 20px;
-}
-
-#marker_info ul {
-  border: 1px solid #000;
-  list-style: none;
-  margin-top: 8px;
-  border-radius: 10px;
-}
-
-#marker_info ul li > p {
-  font-size: 12px;
-}
-
-.yellow {
-  color: yellow;
-  font-size: 40px;
-  font-weight: bold;
-  text-shadow: 0 0 3px black;
-}
-
-.yellow_text {
-  color: #000;
-  font-size: 25px;
-}
-
-.red {
-  color: red;
-  font-size: 40px;
-  font-weight: bold;
-  text-shadow: 0 0 3px black;
-}
-
-.red_text {
-  color: #000;
-  font-size: 25px;
-}
-
-.blue {
-  color: blue;
-  font-size: 40px;
-  font-weight: bold;
-  text-shadow: 0 0 3px black;
-}
-
-.blue_text {
-  color: #000;
-  font-size: 25px;
-}
-
-/*전체 css */
 
 ul {
   margin-top: 20px;
   padding: 0;
 }
+
 #header {
   width: 1000px;
   height: 100px;
@@ -89,17 +17,20 @@ ul {
   margin: 0 auto;
   text-align: center;
 }
+
 #nav {
   width: 1000px;
   height: 100px;
   background: #fff;
 }
+
 #section {
   width: 1000px;
   height: 600px;
   text-align: center;
   margin: 10px auto 15px auto;
 }
+
 #footer {
   width: 1000px;
   height: 100px;
