@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import EV from "./Ev.json";
+import EV from "../json/Ev.json";
+import "../css/App.css";
 
 const { kakao } = window;
-let markers = new Array();
-let infoWindows = new Array();
+
 const Map = () => {
   const [map, setMap] = useState(null);
 
   useEffect(() => {
     const container = document.getElementById("map");
     const options = {
-      center: new kakao.maps.LatLng(37.567167, 127.190292),
+      center: new kakao.maps.LatLng(37.2634355, 127.02863),
       level: 8,
     };
     const kakaoMap = new kakao.maps.Map(container, options);
@@ -18,35 +18,72 @@ const Map = () => {
   }, []);
 
   const markerdata = [];
+
   for (var i = 0; i < EV.length; i++) {
     markerdata.push({
       name: EV[i].TEMP_CONT01,
       lat: EV[i].REFINE_WGS84_LAT,
       lng: EV[i].REFINE_WGS84_LOGT,
       addr: EV[i].REFINE_ROADNM_ADDR,
-      tel: EV[i].MANAGE_ENTRPS_TELNO,
     });
   }
-  console.log(markerdata);
-
-  markerdata.forEach((e) => {
-    let marker = new kakao.maps.Marker({
+  for (var j = 0; j < markerdata.length; j++) {
+    const marker = new kakao.maps.Marker({
       map: map,
-      position: new kakao.maps.LatLng(e.lat, e.lng),
-      title: e.name,
-      clickable: true,
+      position: new kakao.maps.LatLng(markerdata[j].lat, markerdata[j].lng),
+      title: markerdata[j].name,
     });
 
-    let infoWindow = new kakao.maps.InfoWindow({
-      map: map,
-      content: `<div style="padding: 5px; height: 200px';">${e.name} <br> ${e.addr} <br> ${e.tel}</div>`,
-      position: new kakao.maps.LatLng(e.lat, e.lng),
-      removable: true,
-    });
+    const ex = marker.Gb;
 
-    markers.push(marker);
-    infoWindows.push(infoWindow);
-  });
+    function findmark(markerdata) {
+      return markerdata.name === ex;
+    }
+
+    kakao.maps.event.addListener(marker, "click", function () {
+      var ex1 = markerdata.find(findmark);
+
+      var ran = Math.ceil(Math.random() * 3);
+      var ex2 = { state: ran };
+      var ex3 = Object.assign({}, ex1, ex2);
+      console.log(ex3);
+
+      let resultHTML = "";
+
+      if (ex3.state === 1) {
+        resultHTML = ` 
+        <ul>
+        <li>
+          <h2>${ex3.name}</h2>
+          <p>주소: ${ex3.addr}</p>
+          <p><a class="red">●</a> <a class="red_text">혼잡</a></p>
+      </li>
+      </ul>`;
+      }
+      if (ex3.state === 2) {
+        resultHTML = ` 
+        <ul>
+        <li>
+          <h2>${ex3.name}</h2>
+          <p>주소: ${ex3.addr}</p>
+          <p><a class="yellow">●</a> <a class="yellow_text">보통</a></p>
+      </li>
+      </ul>`;
+      }
+      if (ex3.state === 3) {
+        resultHTML = ` 
+        <ul>
+        <li>
+          <h2>${ex3.name}</h2>
+          <p>주소: ${ex3.addr}</p>
+          <p><a class="blue">●</a>  <a class="blue_text">원할</a></p>
+      </li>
+      </ul>`;
+      }
+
+      document.getElementById("marker_info").innerHTML = resultHTML;
+    });
+  }
 
   return (
     <div
@@ -58,6 +95,7 @@ const Map = () => {
       }}
     >
       <div id="map" style={{ width: "99%", height: "500px" }}></div>
+      <div id="marker_info"></div>
     </div>
   );
 };
