@@ -1,7 +1,7 @@
 /* NewsApiComponent CSS */
 
 .container-news {
-  width: 800px;
+  width: 1000px;
   height: 600px;
   transition: height 0.4s;
   position: relative;
@@ -101,5 +101,6 @@
   width: 800px;
   height: 180px;
   position: absolute;
+  margin-left: 100px;
   bottom: 50px;
 }
