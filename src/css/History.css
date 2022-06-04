@@ -11,6 +11,17 @@
   border: 1px solid black; */
 }
 
+.container-history .history h1 {
+  font-size: 24pt;
+}
+
+.container-history .history hr {
+  height: 2px;
+  margin: 20px 20px 40px 20px;
+  border-radius: 15px;
+  background-color: #555;
+}
+
 .container-history .history .history-box {
   width: 300px;
   margin: 20px auto;
@@ -21,4 +32,5 @@
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
   color: #555;
   text-align: left;
+  line-height: 30px;
 }
