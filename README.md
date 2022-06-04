@@ -13,9 +13,9 @@
 &nbsp;  
 &nbsp;
 
-> - [정적 페이지 링크](https://github.com/l0u0h0).
->   (~~현재 배포 안됨.~~)
-> - ~~netlify 배포 예정~~
+> - [정적 페이지 링크](https://2022-web-ecomode.netlify.app).
+>   (~~현재 배포 완료, NewsApi 라이센스 문제로 호출 불가,,~~)
+> - ~~netlify 배포~~
 
 &nbsp;
 
