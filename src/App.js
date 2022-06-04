@@ -1,6 +1,7 @@
 import "./css/App.css";
 import "./css/News.css";
 import "./css/Map.css";
+import "./css/History.css";
 import NewsApi from "./components/NewsApiComponent";
 import Map from "./components/MapComponent";
 import React from "react";

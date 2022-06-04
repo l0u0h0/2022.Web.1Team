@@ -1,10 +1,17 @@
 import React from "react";
 
-export default function History(date) {
-  const month = date.date + 1;
+export default function History(props) {
+  const month = props.date + 1;
   return (
-    <div>
-      <p>{month}월 충전 내역</p>
+    <div className="container-history">
+      <div className="history">
+        <h1>{month - 2}월 충전 내역</h1>
+        <div className="history-box">
+          <p>충전소 명칭</p>
+          <p>충전량</p>
+          <p>충전 비용</p>
+        </div>
+      </div>
     </div>
   );
 }
