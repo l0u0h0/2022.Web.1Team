@@ -9,7 +9,7 @@ export default function ChargeHistory(props) {
   return (
     <div className="container-history">
       {list.list.map((month) => (
-        <History key={`month_${month}`} month={month} />
+        <History month={month} />
       ))}
     </div>
   );

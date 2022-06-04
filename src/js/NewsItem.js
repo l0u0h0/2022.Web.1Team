@@ -4,7 +4,6 @@ import React from "react";
 const NewsItem = ({ news }) => {
   // 제목, 시간, 설명, 링크, 이미지를 프로퍼티에서 받아옴
   const { title, published_date, excerpt, url, media } = news;
-  console.log(news);
   return (
     <>
       {media && (

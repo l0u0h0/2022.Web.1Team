@@ -12,30 +12,6 @@ export default function NewsApi() {
   // Api를 불러오는 상태에 대한 State, 초기값 false
   const [load, setLoad] = useState(false);
 
-  // // Render 되는 시점에서 Api를 호출
-  // useEffect(() => {
-  //   // async, await로 비동기 호출
-  //   const callApi = async () => {
-  //     // loading state true
-  //     setLoad(true);
-  //     try {
-  //       // axios.get으로 api 호출
-  //       const news = await axios.get(
-  //         "https://newsapi.org/v2/everything?pageSize=6&page=1&q=전기차&top-headlines?country=kr&apiKey=6b3e1df4f86f4c4ebae8f5389c7d8ba6"
-  //       );
-  //       // 받아온 데이터 articles state에 저장
-  //       setNewslist(news.data.articles);
-  //       // 에러 발생 시 콘솔에 출력
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //     // 불러오기가 끝나면 loading state false
-  //     setLoad(false);
-  //   };
-  //   // 함수 실행
-  //   callApi();
-  // }, []);
-
   useEffect(() => {
     const options = {
       method: "GET",
@@ -52,32 +28,10 @@ export default function NewsApi() {
       },
     };
     const callApi = async () => {
-      // setLoad(true);
-      // axios
-      //   .request(options)
-      //   .then(function (articles) {
-      //     setLoad(true);
-      //     console.log(articles.data.articles);
-      //     setNewslist(articles.data.articles);
-      //   })
-      //   .catch(function (e) {
-      //     if (e.response) {
-      //       console.log(e.response.data);
-      //       console.log(e.response.status);
-      //       console.log(e.response.headers);
-      //     } else if (e.request) {
-      //       console.log(e.requset);
-      //     } else {
-      //       console.log(e.message);
-      //     }
-      //     console.log(e);
-      //   });
-      // setLoad(false);
-
       // loading state true
       setLoad(true);
       try {
-        // axios.get으로 api 호출
+        // axios로 api 호출
         const news = await axios.request(options);
         // 받아온 데이터 articles state에 저장
         setNewslist(news.data.articles);
@@ -100,7 +54,7 @@ export default function NewsApi() {
   }
   // Swiper 라이브러리를 이용해 Swiper 컴포넌트로 Pagination 모듈 생성
   // map 이용해 NewsItem Component를 하나씩 실행
-  // url을 이용해 각 뉴스마다 고유한 키 값 생성
+  // id을 이용해 각 뉴스마다 고유한 키 값 생성
   return (
     <div className="container-news">
       <Swiper
