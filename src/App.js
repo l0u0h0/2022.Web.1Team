@@ -6,8 +6,15 @@ import Map from "./components/MapComponent";
 import React from "react";
 import $ from "jquery";
 import logo from "./images/logo.png";
+import History from "./components/HistoryComponent";
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      month: 0,
+    };
+  }
   componentDidMount() {
     $(document).ready(function () {
       var $tablink = $("#nav li > a").click(function () {
@@ -18,6 +25,8 @@ class App extends React.Component {
         $("#section > div").eq(idx).addClass("on");
       });
     });
+    const now = new Date();
+    this.setState({ month: now.getMonth() });
   }
   render() {
     return (
@@ -47,17 +56,19 @@ class App extends React.Component {
           </nav>
 
           <section id="section">
-            <div class="on">
+            <div className="on">
               <Map />
             </div>
-            <div>충전내역</div>
+            <div>
+              <History date={this.state.month} />
+            </div>
             <div>
               <NewsApi />
             </div>
           </section>
 
           <footer id="footer">
-            <div class="container">
+            <div className="container">
               <address>
                 Copyright ©
                 <a href="javascript:void(0)">
