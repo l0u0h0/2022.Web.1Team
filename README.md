@@ -13,7 +13,7 @@
 &nbsp;  
 &nbsp;
 
-> - [정적 페이지 링크](https://2022-web-ecomode.netlify.app).
+> - [Netlify Link](https://2022-web-ecomode.netlify.app).
 >   (~~현재 배포 완료, NewsApi 라이센스 문제로 호출 불가,,~~)
 > - ~~netlify 배포~~
 
