@@ -6,14 +6,10 @@ export default function ChargeHistory(props) {
   useEffect(() => {
     setList({ list: [month - 2, month - 1, month] });
   }, [month]);
-  console.log(list);
-  list.list.map((month) => {
-    return console.log(month);
-  });
   return (
     <div className="container-history">
       {list.list.map((month) => (
-        <History month={month} />
+        <History key={`month_${month}`} month={month} />
       ))}
     </div>
   );
