@@ -4,9 +4,7 @@
 
 ## 전기차 충전소 모니터링 프로젝트
 
-### 가제 : ~~EVCS (Electric Vehicle Charging Station monitoring)~~
-
-- ~~프로젝트 이름 추후에 확정 후 변경 예정~~
+### ~~Eco Mode~~
 
 ---
 
@@ -29,5 +27,7 @@
 
 - _`지도API`_
   - 카카오API
+  - [KakaoDevelopers](https://developers.kakao.com/)
 - _`뉴스API`_
   - NewscatcherAPI
+  - [Newscatcher](https://newscatcherapi.com/)
