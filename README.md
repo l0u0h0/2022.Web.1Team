@@ -4,6 +4,8 @@
 
 ## 전기차 충전소 모니터링 프로젝트
 
+![logo](https://user-images.githubusercontent.com/72871841/172047063-c5eceb8f-303e-4ed8-aa03-3340ad72f097.png)
+
 ### ~~Eco Mode~~
 
 ---
