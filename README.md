@@ -6,7 +6,7 @@
 
 ![logo](https://user-images.githubusercontent.com/72871841/172047063-c5eceb8f-303e-4ed8-aa03-3340ad72f097.png)
 
-### ~~Eco Mode~~
+### _Eco Mode 프로젝트_
 
 ---
 
