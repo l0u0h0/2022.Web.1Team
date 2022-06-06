@@ -79,14 +79,22 @@ export default function NewsApi() {
       <div className="under-news">
         {newslist[0].media && (
           <div className="thumnail">
-            <a href={newslist[0].url} target="_blank" rel="noopener noreferrer">
+            <a
+              href={newslist[0].link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src={newslist[0].media} alt="thumnail" />
             </a>
           </div>
         )}
         <div className="contents">
           <h2>
-            <a href={newslist[0].url} target="_blank" rel="noopener noreferrer">
+            <a
+              href={newslist[0].link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {newslist[0].title}
             </a>
           </h2>
