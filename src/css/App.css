@@ -1,4 +1,7 @@
 /* Common CSS */
+* {
+  font-family: "Nanum Gothic", sans-serif;
+}
 
 div .App {
   margin: 200px auto;

@@ -108,5 +108,5 @@
 .contents h2 a:hover {
   color: rgb(44, 177, 214);
   text-decoration: underline;
-  transition: color 1s;
+  transition: all 1s;
 }
