@@ -104,3 +104,8 @@
   margin-left: 100px;
   bottom: 50px;
 }
+
+.contents a:hover {
+  color: rgb(44, 177, 214);
+  text-decoration: underline;
+}
