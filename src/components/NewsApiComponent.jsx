@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import NewsItem from "../js/NewsItem";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper";
+import { Pagination, Autoplay, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -58,7 +58,7 @@ export default function NewsApi() {
   return (
     <div className="container-news">
       <Swiper
-        modules={[Pagination, Autoplay]}
+        modules={[Pagination, Autoplay, Navigation]}
         slidesPerView={3}
         spaceBetween={10}
         centeredSlides
@@ -68,6 +68,10 @@ export default function NewsApi() {
           clickable: true,
           el: ".container-news .swiper-pagination",
         }}
+        navigation={{
+          prevEl: ".container-news .swiper-prev",
+          nextEl: ".container-news .swiper-next",
+        }}
       >
         {newslist.map((news) => (
           <SwiperSlide>
@@ -76,6 +80,12 @@ export default function NewsApi() {
         ))}
       </Swiper>
       <div className="swiper-pagination"></div>
+      <div className="swiper-prev">
+        <div className="material-icons">arrow_back</div>
+      </div>
+      <div className="swiper-next">
+        <div className="material-icons">arrow_forward</div>
+      </div>
       <div className="under-news">
         {newslist[0].media && (
           <div className="thumnail">

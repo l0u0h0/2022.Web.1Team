@@ -110,3 +110,37 @@
   text-decoration: underline;
   transition: all 1s;
 }
+
+.container-news .swiper-prev,
+.container-news .swiper-next {
+  width: 42px;
+  height: 42px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  position: absolute;
+  top: 250px;
+  z-index: 1;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+
+.container-news .swiper-prev {
+  left: 50%;
+  margin-left: -480px;
+  background-color: transparent;
+}
+
+.container-news .swiper-next {
+  right: 50%;
+  margin-right: -480px;
+}
+
+.container-news .swiper-prev:hover,
+.container-news .swiper-next:hover {
+  background-color: #333;
+  color: #fff;
+}
