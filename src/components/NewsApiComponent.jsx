@@ -7,9 +7,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 export default function NewsApi() {
-  // NewsApi에서 받아온 값을 저장할 State, 초기값 null
+  //
   const [newslist, setNewslist] = useState(null);
-  // Api를 불러오는 상태에 대한 State, 초기값 false
+  //
   const [load, setLoad] = useState(false);
 
   useEffect(() => {
@@ -28,33 +28,33 @@ export default function NewsApi() {
       },
     };
     const callApi = async () => {
-      // loading state true
+      //
       setLoad(true);
       try {
-        // axios로 api 호출
+        //
         const news = await axios.request(options);
-        // 받아온 데이터 articles state에 저장
+        //
         setNewslist(news.data.articles);
-        // 에러 발생 시 콘솔에 출력
+        //
       } catch (error) {
         console.log(error);
       }
-      // 불러오기가 끝나면 loading state false
+      //
       setLoad(false);
     };
     callApi();
   }, []);
-  // state 로딩 값이 true면 출력
+  //
   if (load) {
     return <div>로딩중.....</div>;
   }
-  // articles에 null 값 있는지 검사
+  //
   if (!newslist) {
     return null;
   }
-  // Swiper 라이브러리를 이용해 Swiper 컴포넌트로 Pagination 모듈 생성
-  // map 이용해 NewsItem Component를 하나씩 실행
-  // id을 이용해 각 뉴스마다 고유한 키 값 생성
+  //
+  //
+  //
   return (
     <div className="container-news">
       <Swiper
